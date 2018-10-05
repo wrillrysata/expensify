@@ -1,27 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "./Header";
-import Action from "./Action";
-import Options from "./Options";
-import Option from "./Option";
-import AddOption from "./AddOption";
+import Header from "./Components/Header";
+import Action from "./Components/Action";
+import Options from "./Components/Options";
+import Option from "./Components/Option";
+import AddOption from "./Components/AddOption";
 
 class App extends Component {
   state = {
     options: []
   };
-  /** 
-  constructor(props) {
-    super(props);
-    this.state = {
-      options: props.options
-    };
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-    this.handlePick = this.handlePick.bind(this);
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
-  }
-  **/
+
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
   };
