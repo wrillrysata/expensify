@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import "./App.css";
 
 class AddOption extends Component {
+  state = {
+    error: undefined
+  }
+  /** 
   constructor(props) {
     super(props);
-    this.state = {
-      error: undefined
-    };
+   
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  **/
   handleSubmit = e => {
     e.preventDefault();
     const option = e.target.elements.option.value.trim();

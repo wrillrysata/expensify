@@ -7,6 +7,10 @@ import Option from "./Option";
 import AddOption from "./AddOption";
 
 class App extends Component {
+  state = {
+    options: []
+  };
+  /** 
   constructor(props) {
     super(props);
     this.state = {
@@ -17,28 +21,40 @@ class App extends Component {
     this.handleAddOption = this.handleAddOption.bind(this);
     this.handleDeleteOption = this.handleDeleteOption.bind(this);
   }
-  handleDeleteOptions() {
+  **/
+  handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
-  }
-  handleDeleteOption(optionToRemove) {
+  };
+  handleDeleteOption = optionToRemove => {
     this.setState(prevState => ({
       options: prevState.options.filter(option => optionToRemove !== option)
       //if both options are not equal, return true and keep option else
       // return false and delete the option
     }));
-  }
+  };
+
+  handlePick = () => {
+    const randomNumber = Math.floor(Math.random() * this.state.options.length);
+    const decison = this.state.options[randomNumber];
+    alert(decison);
+  };
+  handleAddOption = option => {
+    if (!option) {
+      return "Enter a valid item";
+    } else if (this.state.options.indexOf(option) > -1) {
+      return "That option already exists";
+    }
+    this.setState(prevState => ({ options: prevState.options.concat(option) }));
+  };
   componentDidMount() {
-    try{
+    try {
       const json = localStorage.getItem("options");
 
       const options = JSON.parse(json);
-      if(options){
-      this.setState(() => ({ options }));
+      if (options) {
+        this.setState(() => ({ options }));
       }
-    }catch(e){
-
-    }
-   
+    } catch (e) {}
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -47,20 +63,6 @@ class App extends Component {
       const json = JSON.stringify(this.state.options);
       localStorage.setItem("options", json);
     }
-  }
-
-  handlePick() {
-    const randomNumber = Math.floor(Math.random() * this.state.options.length);
-    const decison = this.state.options[randomNumber];
-    alert(decison);
-  }
-  handleAddOption(option) {
-    if (!option) {
-      return "Enter a valid item";
-    } else if (this.state.options.indexOf(option) > -1) {
-      return "That option already exists";
-    }
-    this.setState(prevState => ({ options: prevState.options.concat(option) }));
   }
 
   render() {
@@ -84,8 +86,5 @@ class App extends Component {
     );
   }
 }
-App.defaultProps = {
-  options: ["Demo item"]
-};
 
 export default App;
