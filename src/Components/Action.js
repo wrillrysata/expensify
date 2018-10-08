@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 
-const Action = (props) => {
-  return (
+const Action = (props) =>  ( //implicitly returning jsx
     <div class="content-wrap">
     <div>
     <button  className="big-button" disabled={!props.hasOption} onClick={props.handlePick}>
@@ -11,6 +10,5 @@ const Action = (props) => {
     </div>
     </div>
   );
-};
 
 export default Action;

@@ -5,15 +5,21 @@ import Action from "./Action";
 import Options from "./Options";
 import Option from "./Option";
 import AddOption from "./AddOption";
+import OptionModal from "./OptionModal";
 
 class Planner extends Component {
   state = {
-    options: []
+    options: [],
+    selectedOption:undefined
   };
 
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
   };
+  handleCloseModal = () => {
+   // alert('closing');
+    this.setState(() => ({ selectedOption: undefined }));
+  }
   handleDeleteOption = optionToRemove => {
     this.setState(prevState => ({
       options: prevState.options.filter(option => optionToRemove !== option)
@@ -25,7 +31,8 @@ class Planner extends Component {
   handlePick = () => {
     const randomNumber = Math.floor(Math.random() * this.state.options.length);
     const decison = this.state.options[randomNumber];
-    alert(decison);
+    this.setState(() => ({ selectedOption: decison }))
+    
   };
   handleAddOption = option => {
     if (!option) {
@@ -71,6 +78,7 @@ class Planner extends Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
+        <OptionModal selectedOption = {this.state.selectedOption} handleCloseModal ={this.handleCloseModal} />
       </div>
     );
   }

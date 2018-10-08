@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import Option from "./Option";
 
-const Options = props => {
-  return (
+const Options = props => (
     <div class="content-wrap">
     <div class="option-header">
     <h3>Things to do</h3>
@@ -20,7 +19,6 @@ const Options = props => {
       ))}
     </div>
   );
-};
 
 export default Options;
 

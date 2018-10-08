@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 
-const Option = props => {
-  return (
+const Option = props => (
     <div class="content-wrap">
     <div className="option">
       <p>{props.optionText}</p>
@@ -15,6 +14,5 @@ Remove
     </div>
     </div>
   );
-};
 
 export default Option;

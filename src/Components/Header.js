@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 
-const Header = props => {
-  return (
+const Header = props =>  (
     <div className="content-wrap">
     <header className="header">
       <h1 className="header-title">{props.title} </h1>
@@ -10,6 +9,5 @@ const Header = props => {
       </header>
     </div>
   );
-};
 
 export default Header;
