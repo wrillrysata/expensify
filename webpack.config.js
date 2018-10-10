@@ -1,12 +1,10 @@
 const path = require('path');
-
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, './index.js'),
+  entry: path.join(__dirname, '/src/index.js'),
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -22,34 +20,37 @@ module.exports = {
       {
         test: /\.jsx?/,
         loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015']
-        }
+      }, 
+      {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: { minimize: true }
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+      'style-loader','css-loader','sass-loader'
+          
+        ]
       },
     ]
   },
-  /** 
+
   plugins: [
     new HtmlWebPackPlugin({
       template: path.join(__dirname, 'public/index.html'),
       inject: 'body'
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    })
-  ],**/
+  ],
+  devtool:'cheap-module-eval-source-map',
   devServer: {
-    contentBase: '/src',
-    port: 5000,
-    proxy: {
-      '/api': 'http://localhost:8080'
-    }
+    contentBase: '/public',
+    port: 5000
   }
 };
-
-
-/**module.exports = {
-    devtool : 'cheap-module-eval-source-map'
-};
-**/
