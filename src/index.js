@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Counter from './playground/counter';
+import Planner from '../src/Components/Planner';
 import registerServiceWorker from './registerServiceWorker';
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';
 
-ReactDOM.render(<App />, document.getElementById('app'));
-//ReactDOM.render(<Counter />, document.getElementById('app'));
+
+ReactDOM.render(<Planner />, document.getElementById('app'));
 registerServiceWorker();
 
