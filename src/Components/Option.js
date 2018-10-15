@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "../App.css";
+//import "../App.css";
 
 const Option = props => (
-    <div class="content-wrap">
+    <div>
     <div className="option">
       <p>{props.optionText}</p>
       <button onClick={(e) =>{

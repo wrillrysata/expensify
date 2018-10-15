@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import "../App.css";
+//import "../App.css";
 
 const Header = props =>  (
-    <div className="content-wrap">
+    <div>
     <header className="header">
+    <div className="container">
       <h1 className="header-title">{props.title} </h1>
       <h2 className="header-subtitle">{props.subtitle} </h2>
+      </div>
       </header>
-    </div>
+      </div>
   );
 
 export default Header;

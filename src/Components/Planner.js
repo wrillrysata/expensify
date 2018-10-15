@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.css";
+//import "../App.css";
 import Header from "./Header";
 import Action from "./Action";
 import Options from "./Options";
@@ -68,6 +68,7 @@ class Planner extends Component {
     return (
       <div>
         <Header title={title} subtitle={subtitle} />
+        <div className="container">
         <Action
           hasOption={this.state.options.length > 0}
           handlePick={this.handlePick}
@@ -78,6 +79,7 @@ class Planner extends Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
+        </div>
         <OptionModal selectedOption = {this.state.selectedOption} handleCloseModal ={this.handleCloseModal} />
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../App.css";
+//import "../App.css";
 
 class AddOption extends Component {
   state = {
@@ -23,7 +23,7 @@ class AddOption extends Component {
   };
   render() {
     return (
-      <div class="content-wrap">
+      <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form className="add-option" onSubmit={this.handleSubmit}>
           <input type="text" name="option" />

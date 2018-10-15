@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "../App.css";
+//import "../App.css";
 import Option from "./Option";
 
 const Options = props => (
-    <div class="content-wrap">
+  <div>
     <div class="option-header">
     <h3>Things to do</h3>
       <button onClick={props.handleDeleteOptions}>Remove All</button>
