@@ -2,27 +2,20 @@ import React, { Component } from "react";
 import Modal from 'react-modal';
 //import "../App.css";
 
-const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
-    }
-  };
+
 
 const OptionModal = (props) => (
     
         <Modal
         isOpen ={!!props.selectedOption}
         contentLabel = "Selected option"
-        style = {customStyles}
         onRequestClose = {props.handleCloseModal}
+        closeTimeoutMS={200}
+        className="modal"
         >
-       <p> {props.selectedOption} </p>
-       <button onClick ={props.handleCloseModal}>Okay</button>
+        <h3 className="modal__title">Selected Option</h3>
+        {props.selectedOption && <p className="modal__body">{props.selectedOption}</p>} 
+       <button className="button" onClick ={props.handleCloseModal}>Okay</button>
         </Modal>
     );
 export default OptionModal;

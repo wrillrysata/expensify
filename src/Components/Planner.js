@@ -10,16 +10,16 @@ import OptionModal from "./OptionModal";
 class Planner extends Component {
   state = {
     options: [],
-    selectedOption:undefined
+    selectedOption: undefined
   };
 
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
   };
   handleCloseModal = () => {
-   // alert('closing');
+    // alert('closing');
     this.setState(() => ({ selectedOption: undefined }));
-  }
+  };
   handleDeleteOption = optionToRemove => {
     this.setState(prevState => ({
       options: prevState.options.filter(option => optionToRemove !== option)
@@ -31,8 +31,7 @@ class Planner extends Component {
   handlePick = () => {
     const randomNumber = Math.floor(Math.random() * this.state.options.length);
     const decison = this.state.options[randomNumber];
-    this.setState(() => ({ selectedOption: decison }))
-    
+    this.setState(() => ({ selectedOption: decison }));
   };
   handleAddOption = option => {
     if (!option) {
@@ -69,18 +68,23 @@ class Planner extends Component {
       <div>
         <Header title={title} subtitle={subtitle} />
         <div className="container">
-        <Action
-          hasOption={this.state.options.length > 0}
-          handlePick={this.handlePick}
-        />
-        <Options
-          options={this.state.options}
-          handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteOption={this.handleDeleteOption}
-        />
-        <AddOption handleAddOption={this.handleAddOption} />
+          <Action
+            hasOption={this.state.options.length > 0}
+            handlePick={this.handlePick}
+          />
+          <div className="widget">
+            <Options
+              options={this.state.options}
+              handleDeleteOptions={this.handleDeleteOptions}
+              handleDeleteOption={this.handleDeleteOption}
+            />
+            <AddOption handleAddOption={this.handleAddOption} />
+          </div>
         </div>
-        <OptionModal selectedOption = {this.state.selectedOption} handleCloseModal ={this.handleCloseModal} />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleCloseModal={this.handleCloseModal}
+        />
       </div>
     );
   }
