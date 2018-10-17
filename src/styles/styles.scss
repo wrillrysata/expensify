@@ -2,7 +2,12 @@ $brand-color: blue;
 
 @import './base/settings';
 @import './base/base';
+@import './components/add-option';
 @import './components/container';
 @import './components/button';
-@import './components/widget';
 @import './components/header';
+@import './components/modal';
+@import './components/widget';
+@import './components/option';
+
+

@@ -9,6 +9,11 @@
     display: flex;
     justify-content: space-between;
 }
+.widget-footer{
+    display: flex;
+    justify-content: space-between;
+    //margin:0 $m-size;
+}
 .widget-header__title{
     margin:0;
 }
