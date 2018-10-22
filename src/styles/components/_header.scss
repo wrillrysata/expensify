@@ -2,7 +2,7 @@ header{
     background: $off-black;
   color: white;
   overflow: hidden;
-  margin-bottom:$xl-size;
+  margin-bottom:$m-size;
   padding: $m-size 0;
 }
 .header-title {
@@ -14,4 +14,7 @@ header{
     font-size: $m-size;
     font-weight: 500;
     margin: 0;
+  }
+  @media(min-width:$desktop-breakpoint){
+    header: $xl-size
   }
