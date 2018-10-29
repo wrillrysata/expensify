@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Planner from '../src/Components/Planner';
+import Expensify from '../src/components/Expensify';
 import registerServiceWorker from './registerServiceWorker';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 
-ReactDOM.render(<Planner />, document.getElementById('app'));
+ReactDOM.render(<p>Welcome to expensify</p>, document.getElementById('app'));
 registerServiceWorker();
 
