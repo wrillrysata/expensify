@@ -3,7 +3,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 //const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, '/src/index.js'),
+  entry: path.join(__dirname, '/src/app.js'),
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
@@ -53,6 +53,7 @@ module.exports = {
   devtool:'cheap-module-eval-source-map',
   devServer: {
     contentBase: '/public',
-    port: 5000
+    port: 5000,
+    historyApiFallback:true
   }
 };
