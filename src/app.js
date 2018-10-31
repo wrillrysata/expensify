@@ -1,12 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter, Route} from 'react-router-dom';
-import Expensify from '../src/components/Expensify';
-import registerServiceWorker from './registerServiceWorker';
-import 'normalize.css/normalize.css';
-import './styles/styles.scss';
+import React from "react";
+import ReactDOM from "react-dom";
 
+import AppRouter from "./routers/AppRouter";
+import "normalize.css/normalize.css";
+import "./styles/styles.scss";
 
-ReactDOM.render(<p>Welcome to expensify</p>, document.getElementById('app'));
-registerServiceWorker();
-
+ReactDOM.render(<AppRouter />, document.getElementById("app"));
