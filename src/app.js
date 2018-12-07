@@ -17,13 +17,17 @@ store.subscribe(() => {
 });
 
  store.dispatch(
-   addExpense({ description: "Water bill", amount: 400, createdAt: 1000 })
+   addExpense({ description: "Water bill", amount: 1400, createdAt: 2000 })
 );
  store.dispatch(
-  addExpense({ description: "Gas bill", amount: 300, createdAt: -1000 })
+  addExpense({ description: "Gas bill", amount: 0, createdAt: 1000 })
+);
+store.dispatch(
+  addExpense({ description: "rent bill", amount: 500, createdAt: 300 })
 );
 // store.dispatch(setTextFilter("gas"));
-// //store.dispatch(setTextFilter("water"));
+
+
 const jsx = (
   <Provider store={store}>
     <AppRouter />
