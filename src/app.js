@@ -12,25 +12,26 @@ const store = configureStore();
 store.subscribe(() => {
   const state = store.getState();
   const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-  console.log(store.getState());
-  console.log(visibleExpenses);
+ // console.log(store.getState());
+  //console.log(visibleExpenses);
 });
 
- store.dispatch(
-   addExpense({ description: "Water bill", amount: 1400, createdAt: 2000 })
+store.dispatch(
+  addExpense({ description: "Water bill", amount: 1400, createdAt: 2000 })
 );
- store.dispatch(
+store.dispatch(
   addExpense({ description: "Gas bill", amount: 0, createdAt: 1000 })
 );
 store.dispatch(
   addExpense({ description: "rent bill", amount: 500, createdAt: 300 })
 );
-// store.dispatch(setTextFilter("gas"));
 
+// store.dispatch(setTextFilter("gas"));
 
 const jsx = (
   <Provider store={store}>
     <AppRouter />
   </Provider>
 );
+
 ReactDOM.render(jsx, document.getElementById("app"));

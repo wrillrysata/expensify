@@ -1,7 +1,4 @@
 import uuid from "uuid";
-//import reducer
-//import expenses from '../reducers/expenses'
-// ADD_EXPENSE
 export const addExpense = ({
     description = "",
     note = "",
