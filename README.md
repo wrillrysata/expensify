@@ -3,6 +3,7 @@
 [![Stars](https://img.shields.io/badge/Stars-5-orange.svg)]()
 
 ### ABOUT
-Expensify is a React based application that lets you manage daily expenses.
-More details soon...
+Expensify is a _fullsnack_ React based application to manage your daily expenses.
+
+More details in a bit...
 
