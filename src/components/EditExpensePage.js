@@ -27,7 +27,7 @@ const mapStateToProps = (state, props) => {
   return {
     expense: state.expenses.find(
       expense => expense.id === props.match.params.id
-    ) //bug. Expense shows undefined
+    )
   };
 };
 export default connect(mapStateToProps)(EditExpensePage);
