@@ -18,7 +18,7 @@ const EditExpensePage = props => {
             props.history.push("/");
         }}
       >
-        Remove{" "}
+        Remove
       </button>
     </div>
   );
