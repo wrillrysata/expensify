@@ -15,7 +15,7 @@ Expensify is an expense tracker tool to manage and track your daily expenses.
 * Users can update their expenses
 
 ## Optional Features
-* Users can set and get notifications to add their daily expenses
+* Users can set and get notifications to record their daily expenses
 
 ## Technologies 
 * ReactJS
