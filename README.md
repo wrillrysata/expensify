@@ -3,8 +3,8 @@
 [![Stars](https://img.shields.io/badge/Stars-7-orange.svg)]()
 [![PRs](https://img.shields.io/badge/PRs-soon-brightgreen.svg)]()
 
-### ABOUT
-Expensify is a fullstack React based application to manage and track your daily expenses.
+### EXPENSIFY 
+Expensify is an expense tracker tool to manage and track your daily expenses.
 
 ## Required Features
 
